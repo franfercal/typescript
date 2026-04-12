@@ -1,6 +1,5 @@
 import type { Asignatura } from "./entidades";
 
-
 interface MatriculaActiva {
   tipo: "ACTIVA";
   asignaturas: Asignatura[];

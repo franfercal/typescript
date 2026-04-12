@@ -2,7 +2,7 @@ export interface Estudiante {
     readonly id: string;
     nombre: string;
     apellidos: string;
-    dni: number;
+    dni: string;
     email: string;
     telefono: number;
     direccion: string;
