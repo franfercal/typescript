@@ -17,6 +17,12 @@ interface MatriculaFinalizada {
 
 export type EstadoMatricula = MatriculaActiva | MatriculaSuspendida | MatriculaFinalizada;
 
+//Modulo 3
+function nuncaEstadoMatricula(estadoDesconocido: never): never {
+  throw new Error(
+    `Estado de matrícula desconocido: ${JSON.stringify(estadoDesconocido)}`,
+  );
+}
 
 export function generarReporte(estado: EstadoMatricula): string {
   switch (estado.tipo) {
@@ -28,5 +34,9 @@ export function generarReporte(estado: EstadoMatricula): string {
 
     case "FINALIZADA":
       return `Matrícula finalizada. Nota media: ${estado.notaMedia}.`;
+
+    default: {
+      return nuncaEstadoMatricula(estado);
+    }
   }
 }
