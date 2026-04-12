@@ -12,3 +12,9 @@ export interface Estudiante {
     fechaNacimiento: Date;
     genero: string;
 }
+
+export interface Asignatura {
+    readonly id: string;
+    nombre: string;
+    creditos: number;
+}
