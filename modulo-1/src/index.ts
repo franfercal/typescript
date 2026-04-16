@@ -1,5 +1,4 @@
-import { calcularMedia, calcularMediana } from "./math-utils.js";
-
+import { calcularMedia, calcularMediana } from "./math-utils";
 const numeros = [1, 2, 10, 4, 22];
 
 console.log("Media:", calcularMedia(numeros));
