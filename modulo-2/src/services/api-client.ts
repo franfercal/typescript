@@ -2,27 +2,27 @@ import type {Estudiante, Asignatura}
 from "../domain/types/entidades";
 
 // CORRECCIÓN 1: satisfies aplicado al objeto completo con union type correcto
-const baseDatos = {
-        "estudiantes/1": {
-            id: "1",
-            nombre: "Francisco",
-            apellidos: "Fdz Cala",
-            dni: "12345679A",
-            email: "francisco.fdz@gmail.com",
-            telefono: 123456789,
-            direccion: "Calle Prueba 123",
-            ciudad: "Sevilla",
-            pais: "España",
-            codigoPostal: 41000,
-            fechaNacimiento: new Date("1992-02-28"),
-            genero: "Masculino"
-        },
-        "asignaturas/1": {
-            id: "1",
-            nombre: "Programacion",
-            creditos: 9
-        }
-    } satisfies Record < string, Estudiante | Asignatura >;
+const baseDatos: Record<string, Estudiante | Asignatura> = {
+    "estudiantes/1": {
+        id: "1",
+        nombre: "Francisco",
+        apellidos: "Fdz Cala",
+        dni: "12345679A",
+        email: "francisco.fdz@gmail.com",
+        telefono: 123456789,
+        direccion: "Calle Prueba 123",
+        ciudad: "Sevilla",
+        pais: "España",
+        codigoPostal: 41000,
+        fechaNacimiento: new Date("1992-02-28"),
+        genero: "Masculino"
+    },
+    "asignaturas/1": {
+        id: "1",
+        nombre: "Programacion",
+        creditos: 9
+    }
+} satisfies Record<string, Estudiante | Asignatura>;
 
 interface RespuestaAPI < T > {
     datos: T;
